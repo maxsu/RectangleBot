@@ -62,7 +62,7 @@ Is not a general method
 1. Sharpen
 2. Canny
 3. Extract Contours
-4. Union contours
+4. Interior Drop (Union contours)
 5. Minimal Bounding Rectangles
 
 ##### Hough Transform
@@ -70,14 +70,20 @@ Is not a general method
 Hough transforms form the basis of much line and rectangle detection literature
 * Existing code examples
 * Important method
+* Deals well with k=1 rectangles.
 
+Naive algorithm has some limitations
+* Requires additional logic to deal with k > 1 
 
 ###### How it works
 
-1. Sharpen
+
 2. Canny 
+3. Interior drop (optional)
 3. Hough transform
-4. Intersect
+4. Extract/Filter lines
+4. Intersect lines
+5. Reconstruct rectangles
 
 ##### Rectangular Hough Transform
 
