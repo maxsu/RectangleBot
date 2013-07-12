@@ -22,20 +22,19 @@ Let I be binary image containing rectangles of the foreground color, on a solid 
 2. No rectangles touch the image boundary.
 3. *Optional*: the rectangles are of known size. 
 4. *Optional*: there are exactly k rectangle, for some known k.
-
+5. *Advanced Topic*: Each rectangle is distorted by an arbitrary affine transform.
 
 Let F : Image -> (R^3)^k  be a function that takes such an image I and gives a vector of the positions and angular orientations of the rectangles.
 
 More generally, relaxing constraints 3 and 4, let G : Image -> [R^5] be a function that takes I and provides a list of the rectangles in I, consisting of their position, size, and orientation. 
 
-In future work we will like to detect rectangles that have been transformed with an affine or perspective transform.
+As an advanced application, we will like to detect rectangles that have been transformed with an affine or perspective transform.
 
-5. *Future Work*: Each rectangle is perturbed by an arbitrary affine transform.
 
 Conditions we will *not* cover at this time include
 
 * Overlapping rectangles
-* Low contrast backgrounds
+* Low contrast backgrounds / ambiguous rectangles
 * Out of focus regions / edges
 * Creased / bent rectangular objects
 
@@ -49,14 +48,43 @@ Conditions we will *not* cover at this time include
 
 ##### Contours
 
-Sharpen -> Canny -> Extract Contours -> Union contours -> Minimal Bounding Rectangles
+Binary contour operations may be the simplest way to do this task
+- Simple code
+- Mostly implemented already
+- Handles k rectangles
+- Handles closely packed rectangles
+
+Is not a general method
+- Won't handle distorted rectangles
+
+How it works:
+1. Sharpen
+2. Canny
+3. Extract Contours
+4. Union contours
+5. Minimal Bounding Rectangles
+6. Extract
 
 ##### Hough Transform
 
+1. Sharpen
+2. Canny 
+3. Hough transform
+4. Intersect
+5. Extract
+
 ##### Rectangular Hough Transform
+
+An efficient technique for rectangles of known size.
 
 ##### Windowed Hough Transform
 
+An efficient and robust algorithm for tighly packed rectangles of multiple sizes.
+
 ##### Keypoint / Corner Detectors
 
+Good at handingling general affine quadrilaterals and image stiching applications.
+
 ##### Haar Cascades
+
+Potentially very robust algorith for advanced page detection use cases.
