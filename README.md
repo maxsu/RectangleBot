@@ -49,29 +49,35 @@ Conditions we will *not* cover at this time include
 ##### Contours
 
 Binary contour operations may be the simplest way to do this task
-- Simple code
-- Mostly implemented already
+
+- Simple example code exists
 - Handles k rectangles
 - Handles closely packed rectangles
 
 Is not a general method
 - Won't handle distorted rectangles
 
-How it works:
+###### How it works
+
 1. Sharpen
 2. Canny
 3. Extract Contours
 4. Union contours
 5. Minimal Bounding Rectangles
-6. Extract
 
 ##### Hough Transform
+
+Hough transforms form the basis of much line and rectangle detection literature
+* Existing code examples
+* Important method
+
+
+###### How it works
 
 1. Sharpen
 2. Canny 
 3. Hough transform
 4. Intersect
-5. Extract
 
 ##### Rectangular Hough Transform
 
