@@ -18,7 +18,7 @@ To that end, we initially frame the problem in a simplified form.
 
 Let I be binary image containing rectangles of the foreground color, on a solid background. The rectangles are of arbitrary position and orientation, but obey the following constraints:
 
-1. The rectangles are completely disjoint, and their boundaries are separate.
+1. The rectangles and their boundaries are completely disjoint from one another.
 2. No rectangles touch the image boundary.
 3. *Optional*: the rectangles are of known size. 
 4. *Optional*: there are exactly k rectangle, for some known k.
@@ -48,6 +48,8 @@ Conditions we will *not* cover at this time include
 #### Methods
 
 ##### Contours
+
+Sharpen -> Canny -> Extract Contours -> Union contours -> Minimal Bounding Rectangles
 
 ##### Hough Transform
 
