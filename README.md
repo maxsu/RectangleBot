@@ -30,8 +30,31 @@ More generally, relaxing constraints 3 and 4, let G : Image -> [R^5] be a functi
 
 In future work we will like to detect rectangles that have been transformed with an affine or perspective transform.
 
+5. *Future Work*: Each rectangle is perturbed by an arbitrary affine transform.
+
+Conditions we will *not* cover at this time include
+
+* Overlapping rectangles
+* Low contrast backgrounds
+* Out of focus regions / edges
+* Creased / bent rectangular objects
+
 #### Programming Resources
 
 [OpenCV]() is written in C, has an extensive C++ interface, as well as a Java API. There are wrappers written for python and ruby, and the Java API allows use with scala, clojure, and other JVM languages. There is support for CUDA hardware and Android. Generally very fast, but difficult to use.
 
 [SimpleCV]() is a simplified python wrapper for OpenCV. It should allow rapid prototyping, and seems to be more well documented than OpenCV's python interface. Easy to use, but slower than opencv. The authors suggest that SimpleCV can be used to quickly implement an algorithm, after which it can be easily translated to OpenCV if greater performance is needed.
+
+#### Methods
+
+##### Contours
+
+##### Hough Transform
+
+##### Rectangular Hough Transform
+
+##### Windowed Hough Transform
+
+##### Keypoint / Corner Detectors
+
+##### Haar Cascades
